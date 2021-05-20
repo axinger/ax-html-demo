@@ -21,8 +21,8 @@ function timeout(time) {
 
 // timeout(100).then((value) => {
 //     console.log("value = ", value);
-// }).catch((err) => {
-//     console.log(err);
+// },function(err) {
+
 // });
 
 // timeout(201).then((value) => {
@@ -57,28 +57,24 @@ function promiseClick2() {
             } else {
                 reject('数字太于10了即将执行失败回调');
             }
-        }, 2000);
+        }, 2001);
     })
 }
 
 function promiseClick3() {
     return new Promise(function(resolve, reject) {
         setTimeout(function() {
-            var num = Math.ceil(Math.random() * 20); //生成1-10的随机数
-            console.log('随机数生成的值：', num)
-            if (num <= 10) {
-                resolve(num);
-            } else {
-                reject('数字太于10了即将执行失败回调');
-            }
-        }, 2000);
+            reject('失败回调');
+        }, 2002);
     })
 }
 
 Promise
     .all([promiseClick3(), promiseClick2(), promiseClick1()])
-    .then(function(results) {
-        console.log(results);
+    .then((value) => {
+        console.log('value = ' + value);
+    }, (err) => {
+        console.log('err = ' + err);
     }).catch((err) => {
-        console.log("err = ", err);
+        console.log('catch err = ' + err);
     });
