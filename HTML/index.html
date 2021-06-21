@@ -4,13 +4,17 @@
 <head>
     <meta charset="utf-8">
     <title>菜鸟教程(runoob.com)</title>
+    <!-- <script src="http://cdn.suoluomei.com/common/js2.0/axios/axios.min.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
     <p>自定义事件</p>
     <p id="demo"></p>
 
-    <button id="doEvent">触发事件</button>
+    <button id="doEvent">触发事件</button><br>
+    <button id="axiosBtn">axios请求</button><br>
+
 
     <script>
         //创建事件对象：
@@ -66,6 +70,23 @@
             document.dispatchEvent(new CustomEvent('screenEvent', {
                 detail: st
             }))
+
+
+        }
+
+
+
+        document.getElementById('axiosBtn').onclick = function() {
+
+            // 可选地，上面的请求可以这样做
+            axios.get('https://autumnfish.cn/api/joke/list?num=6')
+                .then(function(response) {
+                    console.log('成功=' + JSON.stringify(response));
+                    console.log('成功status=' + response.status);
+                    console.log('成功data=' + JSON.stringify(response.data));
+                }, function(err) {
+                    console.log('失败' + err);
+                })
 
 
         }
