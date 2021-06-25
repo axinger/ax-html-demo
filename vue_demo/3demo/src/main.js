@@ -12,6 +12,6 @@ new Vue({
   router,
   // 简写
   // components: { App:App },
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

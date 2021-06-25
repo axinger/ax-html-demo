@@ -1,19 +1,19 @@
 <template>
-<div>
-  <p>这里是Home</p>
-  <p class="msg">{{msg}}</p>
-</div>
+  <div>
+    <p>这里是Home</p>
+    <p class="msg">{{ msg }}</p>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Home",
   //在组件中,必须用函数
-  data(){
+  data() {
     return {
-      msg:'我是Home',
+      msg: '我是Home',
     }
-}
+  }
 }
 </script>
 

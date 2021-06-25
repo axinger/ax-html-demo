@@ -2,8 +2,8 @@
 <template>
   <div id="app">
     <img class="logo" src="./assets/logo.png">
-<!--    <router-view/>-->
-<!--    3.使用组件-->
+    <!--    <router-view/>-->
+    <!--    3.使用组件-->
     <Home/>
   </div>
 </template>
@@ -12,9 +12,10 @@
 
 //1.引入组件
 import Home from './components/Home'
+
 export default {
   name: 'App',
-  components:{
+  components: {
     //2.映射组件标签
     Home
   }
@@ -30,7 +31,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.logo{
+
+.logo {
   width: 50px;
   height: 50px;
 }
