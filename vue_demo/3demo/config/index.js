@@ -50,13 +50,17 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-
+    // assetsPublicPath: '/',
+    // ios修改,需要修改打包到移动端
+    assetsPublicPath: './',
     /**
      * Source Maps
      */
 
-    productionSourceMap: true,
+    // productionSourceMap: true,
+    // ios修改,需要修改打包到移动端
+    productionSourceMap: false,
+
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 
