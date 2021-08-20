@@ -3,94 +3,189 @@
 
 <head>
     <meta charset="utf-8">
-    <title>菜鸟教程(runoob.com)</title>
-    <!-- <script src="http://cdn.suoluomei.com/common/js2.0/axios/axios.min.js"></script> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="./static/bootstrap.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: #0c5460">
+<div class="container">
+
+    <div class="row" >
+        <div class="col-xs-6 col-sm-3"
+             style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="col-xs-6 col-sm-3"
+             style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut.
+            </p>
+        </div>
+
+        <div class="clearfix visible-xs"></div>
+
+        <div class="col-xs-6 col-sm-3"
+             style="background-color: #dedef8;
+         box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+        <div class="col-xs-6 col-sm-3"
+             style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim
+            </p>
+        </div>
+    </div>
+
+
+    <div style="background-color: red">
+
+        <div class="row">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div class="page-header">
+                    <h2>路由</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-offset-2 col-xl-2">
+                <div class="list-group">
+                    <span class="list-group-item"> About</span>
+                    <span class="list-group-item"> Home</span>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="checkbox"> 选项 1
+        </label>
+        <label class="btn btn-primary">
+            <input type="checkbox"> 选项 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="checkbox"> 选项 3
+        </label>
+    </div>
+    <br>
+
+
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option1"> 选项 1
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2"> 选项 2
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="option3"> 选项 3
+        </label>
+    </div>
+
+
     <p>自定义事件</p>
     <p id="demo"></p>
 
-    <button id="doEvent">触发事件</button><br>
-    <button id="axiosBtn">axios请求</button><br>
+    <button id="doEvent">触发事件</button>
+    <br>
+    <button id="axiosBtn">axios请求</button>
+    <br>
+
+</div>
+<script>
+    //创建事件对象：
+    // let customEvent = new CustomEvent('customEventName', {
+    //         detail: {
+    //             a: 1
+    //         }
+    //     })
+    //     //分派事件：
+    // document.dispatchEvent(customEvent)
+    //     //监听事件：
+    // document.addEventListener('customEventName', e => {
+    //     console.log(e)
+    //     console.log(e.detail.a) // 1
+    //     alert(e.detail.a)
+    // })
+
+    // http://blog.haoji.me/js-custom-event.html
+    // 监听事件：
+    document.addEventListener('screenEvent', e => {
+        console.log(e)
+        console.log(e.detail) // 2
+        alert(e.detail);
+        alert(JSON.stringify(e.detail));
+        alert(e.detail.name);
+    })
 
 
-    <script>
-        //创建事件对象：
-        // let customEvent = new CustomEvent('customEventName', {
-        //         detail: {
-        //             a: 1
-        //         }
+    class Student {
+        constructor(
+            name,
+            age
+        ) {
+            this.name = name;
+            this.age = age;
+        }
+    }
+
+    document.getElementById('doEvent').onclick = function () {
+
+        // 创建事件对象：
+        // let ev = document.createEvent('CustomEvent')
+        //     // 初始化事件对象：
+        // ev.initCustomEvent('screenEvent', false, true, {
+        //         b: 2
         //     })
-        //     //分派事件：
-        // document.dispatchEvent(customEvent)
-        //     //监听事件：
-        // document.addEventListener('customEventName', e => {
-        //     console.log(e)
-        //     console.log(e.detail.a) // 1
-        //     alert(e.detail.a)
-        // })
-
-        // http://blog.haoji.me/js-custom-event.html
-        // 监听事件：
-        document.addEventListener('screenEvent', e => {
-            console.log(e)
-            console.log(e.detail) // 2
-            alert(e.detail);
-            alert(JSON.stringify(e.detail));
-            alert(e.detail.name);
-        })
+        //     // 分派事件：
+        // document.dispatchEvent(ev)
 
 
-        class Student {
-            constructor(
-                name,
-                age
-            ) {
-                this.name = name;
-                this.age = age;
-            }
-        }
-        document.getElementById('doEvent').onclick = function() {
-
-            // 创建事件对象：
-            // let ev = document.createEvent('CustomEvent')
-            //     // 初始化事件对象：
-            // ev.initCustomEvent('screenEvent', false, true, {
-            //         b: 2
-            //     })
-            //     // 分派事件：
-            // document.dispatchEvent(ev)
+        var st = new Student("tom", 12)
+        st.name = 'jim'
+        //分派事件：
+        document.dispatchEvent(new CustomEvent('screenEvent', {
+            detail: st
+        }))
 
 
-            var st = new Student("tom", 12)
-            st.name = 'jim'
-                //分派事件：
-            document.dispatchEvent(new CustomEvent('screenEvent', {
-                detail: st
-            }))
+    }
 
 
-        }
+    document.getElementById('axiosBtn').onclick = function () {
+
+        // 可选地，上面的请求可以这样做
+        axios.get('https://autumnfish.cn/api/joke/list?num=6')
+            .then(function (response) {
+                console.log('成功=' + JSON.stringify(response));
+                console.log('成功status=' + response.status);
+                console.log('成功data=' + JSON.stringify(response.data));
+            }, function (err) {
+                console.log('失败' + err);
+            })
 
 
-
-        document.getElementById('axiosBtn').onclick = function() {
-
-            // 可选地，上面的请求可以这样做
-            axios.get('https://autumnfish.cn/api/joke/list?num=6')
-                .then(function(response) {
-                    console.log('成功=' + JSON.stringify(response));
-                    console.log('成功status=' + response.status);
-                    console.log('成功data=' + JSON.stringify(response.data));
-                }, function(err) {
-                    console.log('失败' + err);
-                })
-
-
-        }
-    </script>
+    }
+</script>
 
 
 </body>

@@ -1,41 +1,48 @@
 <template>
 
   <div class="todo-header">
-    <input class="search" type="text" placeholder="请输入任务名称" v-model="inputTodo" @keyup.enter="addItem">
+    <input class="search" type="text" placeholder="请输入任务名称" v-model="title" @keyup.enter="addItem">
   </div>
 
 </template>
 
 <script>
-
-import {ADD_TODO} from "../store/mutations-types";
-
+import PubSub from 'pubsub-js'
+import {PubSubKeyTodo} from '../util/pubsubKey';
 export default {
   data() {
     return {
-      inputTodo: '',
+      title: '',
+
     }
   },
-
+  props: {
+    addTodo: Function,
+  },
   methods: {
     addItem() {
 
-      const inputTodo = this.inputTodo.trim()
+      const title = this.title.trim()
       //1. 检查输入合法性
-      if (!inputTodo) {
+      if (!title) {
         alert('必须输入')
         return
       }
 
       // 2. 根据输入生成一个todo对象
       const todo = {
-        title: inputTodo,
+        title,
         complete: false,
       }
       // 3.添加到todos,父组件传值
-      this.$store.dispatch('addTodo', todo)
+
+      // this.addTodo(todo)
+      //使用自定义绑定事件,触发自定义事件
+      // this.$emit('addTodo',todo)
+      // 使用发布消息
+      PubSub.publish(PubSubKeyTodo,todo)
       // 4.清除输入
-      this.inputTodo = ''
+      this.title = ''
     },
   }
 

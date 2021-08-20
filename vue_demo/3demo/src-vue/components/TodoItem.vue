@@ -22,14 +22,12 @@
 </template>
 
 <script>
-import {DELETE_TODO} from "../store/mutations-types";
-
 export default {
   props: {
     todo: Object,
     index: Number,
+    deleteTodo: Function,
   },
-
   data() {
     return {
       bgColor: 'white',
@@ -38,13 +36,12 @@ export default {
 
   },
   methods: {
-
-
     deleteItem() {
-      const {todo, index} = this
+      const {todo, index, deleteTodo} = this
+
       // ` esc 的符号
       if (window.confirm(`确认删除${todo.title}坐标:${index}`)) {
-        this.$store.dispatch('deleteTodo',index)
+        deleteTodo(index)
       }
 
     },
