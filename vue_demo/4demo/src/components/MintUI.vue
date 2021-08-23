@@ -9,6 +9,8 @@
   <mt-button size="large">large</mt-button>
   <mt-button size="normal" @click="toast">normal</mt-button>
 
+  <a-button type="primary">Button</a-button>
+
 
 </div>
 </template>

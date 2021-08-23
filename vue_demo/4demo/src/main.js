@@ -4,18 +4,27 @@ import Vue from 'vue'
 import App from './App'
 import router from './router/index'
 import store from "./util/store";
+
 Vue.config.productionTip = false
 
-import { Button } from 'mint-ui';
+import {Button as elmButton} from 'mint-ui';
 import 'mint-ui/lib/style.css'
-Vue.component(Button.name, Button);
+
+Vue.component(elmButton.name, elmButton);
+
+
+import {Button as antButton} from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+
+Vue.component(antButton.name, antButton);
+
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  components: {App},
-  template: '<App/>',
-  router,
-  store,// 所有组件对象多一个属性 $store
+    el: '#app',
+    components: {App},
+    template: '<App/>',
+    router,
+    store,// 所有组件对象多一个属性 $store
 
 })
