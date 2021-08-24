@@ -35,6 +35,11 @@ export default {
     this.$store.dispatch('reqTodos')
 
   },
+  methods:{
+    add(){
+      this.$store.dispatch('reqTodos')
+    }
+  }
 }
 </script>
 

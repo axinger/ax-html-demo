@@ -16,3 +16,4 @@ export default new Vuex.Store({
   getters//包含多个getter计算属性
 
 })
+

@@ -5,10 +5,10 @@
       <span>已完成{{ selectCount }}/全部{{ totalCount }},可全选{{ !isDisabled ? '是' : '否' }}</span>
     </div>
     <div class="item-right">
-            <button type="button" id="do-action"
-                    @click="deleteAllSelect"
-                    v-show="selectCount">清除已经完成任务
-            </button>
+      <button type="button" id="do-action"
+              @click="deleteAllSelect"
+              v-show="selectCount">清除已经完成任务
+      </button>
     </div>
   </div>
 </template>

@@ -1,4 +1,4 @@
-import {ADD_TODO, DELETE_ALl_SELECT, SELECT_ALL_TODOS, DELETE_TODO, RECEIVE_TODOS} from "./mutations-types";
+import {ADD_TODO, DELETE_ALl_SELECT, DELETE_TODO, RECEIVE_TODOS, SELECT_ALL_TODOS} from "./mutations-types";
 import storageUtil from "../util/storageUtil";
 
 export default {

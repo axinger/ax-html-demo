@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import {DELETE_TODO} from "../store/mutations-types";
 
 export default {
   props: {

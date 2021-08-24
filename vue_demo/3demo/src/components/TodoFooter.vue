@@ -35,6 +35,10 @@ export default {
   },
   methods: {
     ...mapActions(['deleteAllSelect'])
+  },
+  created() {
+  },
+  mounted() {
   }
 }
 </script>

@@ -8,8 +8,6 @@
 
 <script>
 
-import {ADD_TODO} from "../store/mutations-types";
-
 export default {
   data() {
     return {
