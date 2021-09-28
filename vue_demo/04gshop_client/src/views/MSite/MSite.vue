@@ -1,5 +1,11 @@
 <template>
-  <div>首页</div>
+  <div class="msite">
+<!--    首页头部-->
+    <header class="msite_header">
+
+    </header>
+
+  </div>
 </template>
 
 <script>
