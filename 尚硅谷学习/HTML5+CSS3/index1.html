@@ -9,18 +9,65 @@
 <head>
     <!--  meta 元数据,设置字符集,避免乱码-->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- name 指定数据的名称, content 指定数据的内容  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <!--  搜索引擎,判断主要内容-->
     <title>Title</title>
 </head>
 
 <body>
 
-    <h1>富文本
-        <font size="3" color="red">This is 777</font>
-    </h1>
-    <h1>富文本
-        <p style="color:red">This is some text! </p>
-    </h1>
+    <h1 style="color:red">实体</h1>
+    空格只能显示1个,用实体&; 空格名称nbsp
+    <h2>多个 空格</h2>
+
+    <h2>多个&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 空格</h2>
+    <div>
+        <p>&gt; 大于</p>
+        <p>2&gt;1</p>
+    </div>
+
+    <h2>meta标签,元数据,浏览器解析</h2>
+    <div>
+        meta name="keywords" 表示网站关键字 content="网上购物,消费",多个关键字
+        <br> mate description="网站描述" 搜索结果
+        <br> http-equiv="refresh" content="3;url=http://www.baidu.com"自动倒计时,重定向
+    </div>
+
+
+
+    <h2>标题标签</h2>
+    h1~h6 独占一行为块元素
+    <br>p标签 表示一个段落,含有段落间隔
+    <br> hgroup 分组
+    <hgroup>
+        <h1>大标题</h1>
+        <h2>小标题</h2>
+    </hgroup>
+    <hgroup>
+        <h1>大标题</h1>
+        <h2>小标题</h2>
+    </hgroup>
+
+    <p>em标签,加重,不会换行</p>
+    <p><em>好好好</em></p>
+
+    <p>strong标签,重要内容</p>
+    <strong>加粗效果</strong>
+    <p>blockquote 引用,首行缩进</p>
+    <blockquote>
+        引用的内容
+    </blockquote>
+    <p>q 引号</p>
+    <q>引用</q>
+
+    <p>块元素,行内元素</p>
+    <br> 块元素:布局
+    <br>行内元素:包裹文字,块里面包含行内元素
+
 
 </body>
 
