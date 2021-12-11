@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function checkForm() {
+            var pwd = document.getElementById('password');
+            alert(pwd);
+            var pwd_md5 = document.getElementById('password_md5');
+            pwd_md5.value = pwd.value.MD5();// 把用户输入的明文变为MD5
+            return true;
+        }
+    </script>
+
+</head>
+<body>
+
+
+<form id="login" method="post" onsubmit="return checkForm()">
+  <input type="text" id="username" name="username">
+  <input type="password" id="password">
+  <input type="hidden" id="password_md5" name="password">
+  <button type="submit">Submit</button>
+</form>
+
+
+
+
+</body>
+</html>
