@@ -357,23 +357,23 @@
             },
 
             vForDelete(index) {
-                // alert(index)
+                // alert(index.html)
                 this.persons.splice(index, 1)
                 //这样有空占位
-                // delete  this.persons[index]
+                // delete  this.persons[index.html]
                 // alert(this.persons)
                 console.log(index);
             },
 
             vForUpdate(index, person) {
-                // this.persons[index].age = 11;
+                // this.persons[index.html].age = 11;
 
-                // const p = this.persons[index];
+                // const p = this.persons[index.html];
                 // p.age = 11;
                 //这样会刷新
                 this.persons[index].name = person.name;
                 //这样不会刷新
-                // this.persons[index] = person;
+                // this.persons[index.html] = person;
                 // 操作数组 触发地址变化
                 this.persons.splice(index, 1, person)
 
