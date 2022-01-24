@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div v-bind:style="msg">单向绑定 v-bind: + 属性</div>
+
+        <div :style="msg">单向绑定简写 : + 属性</div>
+
+
+    </div>
+
+
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    msg: 'color: red;',
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+
+
+</html>

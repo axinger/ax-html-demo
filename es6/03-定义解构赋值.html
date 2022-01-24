@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        let [x, y, z] = [1, 2, 3]
+        console.log("xyz", x, y, z);
+
+        // 对象解构
+        let user = { name: "jim", age: 18 }
+        let name1 = user.name
+        console.log("name1 = ", name1);
+
+        {
+            let { name, age } = user
+            console.log("name = ", name);
+        }
+
+        // 无关顺序,字段名必须一致
+        let { age, name } = user
+        console.log("name3 = ", name,"age = ",age);
+
+    </script>
+</body>
+
+</html>

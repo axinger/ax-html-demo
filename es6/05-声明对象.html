@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        let name = 'jim'
+        let age = 10
+        let user = { name: name, age: age }
+        console.log(user);
+
+        {
+            // 必须先定义属性值,会自动添加属性名
+            let user = { name, age }
+            console.log(user);
+        }
+
+        // constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。
+        //一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。
+        class Dog {
+
+            // 定义属性 构造器,必应有
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+        }
+
+
+        let dog = new Dog(1, 2);
+        console.log(dog);
+        console.log(dog.x);
+    </script>
+</body>
+
+</html>
