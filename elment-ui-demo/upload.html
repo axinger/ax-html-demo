@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
 
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+ <!-- 引入样式 -->
+ <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+ <!-- 引入组件库 -->
+ <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
 </head>
 
@@ -25,50 +25,50 @@
             <el-form label-width="170px" label-position="left">
                 <el-form-item label="文件">
                     <el-upload action="http://localhost:8202/admin/cmn/dict/importData" :multiple="false" :limit="1"
-                        :on-success="onUploadSuccess">
-                        <el-button size="small" type="primary">点击上传</el-button>
-                        <div slot="tip" class="el-upload__tip">
-                            只能上传excel文件，且不超过500kb
-                        </div>
-                    </el-upload>
-                </el-form-item>
-            </el-form>
-            <span slot="footer" class="dialog-footer">
-                <el-button @click="dialogVisible = false">取 消</el-button>
-            </span>
-        </el-dialog>
+                    :on-success="onUploadSuccess">
+                    <el-button size="small" type="primary">点击上传</el-button>
+                    <div slot="tip" class="el-upload__tip">
+                        只能上传excel文件，且不超过500kb
+                    </div>
+                </el-upload>
+            </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialogVisible = false">取 消</el-button>
+        </span>
+    </el-dialog>
 
-    </div>
-
-
-    <script>
+</div>
 
 
-        const app = new Vue({
-            el: '#app',
-            data() {
-                return {
-                    dialogVisible: false
-                }
+<script>
+
+
+    const app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                dialogVisible: false
+            }
+        },
+        created() {
+            debugger
+            console.log('渲染之前===============');
+        },
+        mounted() {
+            debugger
+            console.log('渲染之后===============');
+        },
+        methods: {
+
+            showDataDialog() {
+                this.dialogVisible = true;
             },
-            created() {
-                debugger
-                console.log('渲染之前===============');
+            importData() {
+                alert("dddd");
             },
-            mounted() {
-                debugger
-                console.log('渲染之后===============');
-            },
-            methods: {
-
-                showDataDialog() {
-                    this.dialogVisible = true;
-                },
-                importData() {
-                    alert("dddd");
-                },
-                onUploadSuccess() {
-                    this.dialogVisible = false;
+            onUploadSuccess() {
+                this.dialogVisible = false;
                     //   this.findChildData(1);
                     this.$message({
                         type: "success",
