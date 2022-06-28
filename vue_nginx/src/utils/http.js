@@ -1,5 +1,5 @@
 import axios from "axios"
-import { MessageBox, Message } from "element-ui"
+import { Message } from "element-ui"
 
 const http = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
@@ -22,8 +22,8 @@ http.interceptors.response.use(
 
     return res
   },
-  (err) => {
-    console.log("响应拦截器 err = ", err)
+  (error) => {
+    console.log("响应拦截器 err = ", error)
     Message({
       message: error.message,
       type: "error",

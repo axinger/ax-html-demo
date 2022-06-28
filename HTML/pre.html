@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-base64@3.6.0/base64.min.js"></script>
+<body>
+
+<button onclick="mymethon()">预览</button>
+</body>
+
+<script type="text/javascript">
+    function mymethon() {
+        alert("触发点击事件");
+
+        var url = 'http://192.168.101.143/硬度检测报告129362.pdf'; //要预览文件的访问地址
+        var base_url = Base64.encode(url);
+
+        var URL = encodeURIComponent(base_url);
+        alert("URL = " + URL);
+        window.open('http://192.168.101.143:8012/onlinePreview?url=' + encodeURIComponent(Base64.encode(url)) + '&officePreviewType=pdf');
+
+
+    }
+</script>
+</html>
