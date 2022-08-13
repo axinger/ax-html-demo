@@ -13,7 +13,7 @@ module.exports = {
   // 当运行 vue-cli-service build 时生成的生产环境构建文件的目录。
   // 注意目标目录在构建之前会被清除 (构建时传入 --no-clean 可关闭该行为)。
   // 默认值'dist'
-  //   outputDir: "dist",
+  outputDir: "dist",
   // 放置生成的静态资源 (js、css、img、fonts) 的目录(相对于outputDir目录)。
   // 默认值''
   assetsDir: "static",
@@ -41,11 +41,13 @@ module.exports = {
     proxy: {
       [process.env.VUE_APP_BASE_API]: {
         target: process.env.VUE_APP_HOSP_BASE_URL,
-        changeOrigin: true,
+        changeOrigin: true, //虚拟的站点需要更管origin
+        secure: false, //是否https接口
         pathRewrite: {
-          ["^" + process.env.VUE_APP_BASE_API]: "",
+          ["^" + process.env.VUE_APP_BASE_API]: "", //重写路径
         },
       },
     },
+    disableHostCheck: true,
   },
 }

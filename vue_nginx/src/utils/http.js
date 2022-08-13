@@ -11,21 +11,22 @@ http.interceptors.response.use(
     console.log("响应拦截器 = ", res)
 
     if (res.status == 200) {
-      console.log("响应拦截器200  = ", res.data)
-
       if (res.data.code == 200) {
         return res.data.data
       }
-
       return res.data
     }
-
+    Message({
+      message: res.message || "Error",
+      type: "error",
+      duration: 5 * 1000,
+    })
     return res
   },
   (error) => {
     console.log("响应拦截器 err = ", error)
     Message({
-      message: error.message,
+      message: error.message || "Error",
       type: "error",
       duration: 5 * 1000,
     })

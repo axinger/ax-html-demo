@@ -7,4 +7,11 @@ export default {
       method: "get",
     })
   },
+
+  getTest2() {
+    return http({
+      url: `/ip2`,
+      method: "get",
+    })
+  },
 }
